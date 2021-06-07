@@ -16,10 +16,10 @@ from bs4 import BeautifulSoup as bs
 from requests import get, post
 import os, math, json, random, re, html_text, pytesseract, base64, time, smtplib, html5lib
 
-ua_ig = 'Mozilla/5.0 (Linux; Android 10; Redmi Note 9 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.127 Mobile Safari/537.36'
+ua_ig = 'Mozilla/5.0 (Linux; Android 10; OPPO A12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.127 Mobile Safari/537.36'
 
 app = Flask(__name__)
-apiKey = 'Kuv-Api'
+apiKey = 'XynnApi'
 apiKey_ocr = '09731daace88957'
 app.config['MEDIA'] = 'tts'
 app.secret_key = b'BB,^z\x90\x88?\xcf\xbb'
@@ -96,7 +96,7 @@ def layer():
 			os.system('base64 result.jpg > pow.jpg')
 			return {
 				'status': 200,
-				'creator':'I Am Mario',
+				'creator':'Adittt',
 				'result': '`data:image/jpg;base64,%s`' % open('pow.jpg').read()
 			}
 		except Exception as e:
@@ -138,7 +138,7 @@ def spamgimel():
                 server.quit()
                 return {
                     'status': 200,
-                    'creator':'I Am Mario',
+                    'creator':'Adittt',
                     'logs': hasil
                 }
             except Exception as e:
@@ -173,7 +173,7 @@ def spamcall():
                 hasil += '[!] Gagal mengirim spam call ke nomor : 62%s' % no
             return {
                 'status': 200,
-                'creator':'I Am Mario',
+                'creator':'Adittt',
                 'logs': hasil
             }
         else:
@@ -194,7 +194,7 @@ def spamming():
             jum = int(request.args.get('jum'))
             if jum > 20: return {
                 'status': 200,
-                'creator':'I Am Mario',
+                'creator':'Adittt',
                 'msg': '[!] Max 20 ganteng'
             }
             url = 'https://www.lpoint.co.id/app/member/ESYMBRJOTPSEND.do'
@@ -219,7 +219,7 @@ def spamming():
                     hasil += '[!] Sukses\n'
             return {
                 'status': 200,
-                'creator':'I Am Mario',
+                'creator':'Adittt',
                 'logs': hasil
             }
         else:
@@ -243,7 +243,7 @@ def lagu():
             print(data)
             return {
             	'status': 200,
-            	'creator':'I Am Mario',
+            	'creator':'Adittt',
 	            'result': data
             }
         except Exception as e:
@@ -267,7 +267,7 @@ def noolees():
                 i.save('resolt.jpg')
             return {
                 'status': 200,
-                'creator':'I Am Mario',
+                'creator':'Adittt',
                 'result': ''
             }
         except:
@@ -293,7 +293,7 @@ def wikipedia():
 			result = heuh_[hueh[0]]['extract']
 			return {
 				'status': 200,
-				'creator':'I Am Mario',
+				'creator':'Adittt',
 				'result': result
 			}
 		except Exception as e:
@@ -317,7 +317,7 @@ def tts():
 			if int(len(teks)) - int(len(teks.split(' '))) == 250:
 				return {
 					'status': 200,
-					'creator':'I Am Mario',
+					'creator':'Adittt',
 					'msg': '[❗] Maaf teks terlalu panjang!!',
 				}
 			else:
@@ -328,7 +328,7 @@ def tts():
 					open('tts/tts.mp3','wb').write(Tts)
 					return {
 						'status': 200,
-						'creator':'I Am Mario',
+						'creator':'Adittt',
 						'msg': 'Success convert text to speech!',
 						'file': 'https://tobz-api.herokuapp.com/tts/tts.mp3'
 					}
@@ -337,7 +337,7 @@ def tts():
 					open('tts/tts.mp3','wb').write(Tts)
 					return {
 						'status': 200,
-						'creator':'I Am Mario',
+						'creator':'Adittt',
 						'msg': 'Success convert text to speech!',
 						'file': 'https://tobz-api.herokuapp.com/tts/tts.mp3'
 					}
@@ -350,7 +350,7 @@ def tts():
 	else:
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'msg': '[!] Masukkan parameter text'
 		}
 
@@ -368,7 +368,7 @@ def ytv():
 			dl_link = bs(post('https://www.y2mate.com/mates/en60/convert',data={'type':url.split('/')[2],'_id':id[0],'v_id':url.split('/')[3],'ajax':'1','token':'','ftype':'mp4','fquality':'360p'}).json()['result'],'html.parser').find('a')['href']
 			return {
 				'status': 200,
-				'creator':'I Am Mario',
+				'creator':'Adittt',
 				'title': title,
 				'thumb': thumb,
 				'result': dl_link,
@@ -402,7 +402,7 @@ def yta():
 			dl_link = bs(post('https://www.y2mate.com/mates/en60/convert',data={'type':url.split('/')[2],'_id':id[0],'v_id':url.split('/')[3],'ajax':'1','token':'','ftype':'mp3','fquality':'128'}).json()['result'],'html.parser').find('a')['href']
 			return {
 				'status': 200,
-				'creator':'I Am Mario',
+				'creator':'Adittt',
 				'title': title,
 				'thumb': thumb,
 				'filesize': filesize,
@@ -431,7 +431,7 @@ def chord():
 			result = html_text.parse_html(chord['post']['content']).text_content()
 			return {
 				'status': 200,
-				'creator':'I Am Mario',
+				'creator':'Adittt',
 				'result': result
 			}
 		except Exception as e:
@@ -456,7 +456,7 @@ def dewabatch():
 			if he != '':
 				return {
 					'status': 200,
-					'creator':'I Am Mario',
+					'creator':'Adittt',
 					'sinopsis': dewabatch['result'],
 					'thumb': dewabatch['cover'],
 					'result': dewabatch['info']
@@ -483,7 +483,7 @@ def komiku():
                 manga = scrap_komiku(komi)
                 return {
                     'status': 200,
-                    'creator':'I Am Mario',
+                    'creator':'Adittt',
                     'info': manga['info'],
                     'genre': manga['genre'],
                     'sinopsis': manga['sinopsis'],
@@ -512,7 +512,7 @@ def kusonime():
 			if he != '':
 				return {
 					'status': 200,
-					'creator':'I Am Mario',
+					'creator':'Adittt',
 					'sinopsis': kuso['sinopsis'],
 					'thumb': kuso['thumb'],
 					'info': kuso['info'],
@@ -541,7 +541,7 @@ def otakudesuu():
                 otaku=scrap_otakudesu(he)
                 return {
                     'status': 200,
-                    'creator':'I Am Mario',
+                    'creator':'Adittt',
                     'sinopsis': otaku['sinopsis'],
                     'thumb': otaku['thumb'],
                     'info': otaku['info'],
@@ -567,7 +567,7 @@ def brainly_scraper():
 			br=brainly(gsearch('"%s" site:brainly.co.id' % quote(query), lang='id')[0])
 			return {
 				'status': 200,
-				'creator':'I Am Mario',
+				'creator':'Adittt',
 				'result': br
 			}
 		except Exception as e:
@@ -589,7 +589,7 @@ def nekonimek():
 		nimek = neko['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': nimek
 		}
 	except:
@@ -597,7 +597,7 @@ def nekonimek():
 		nimek = neko['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': nimek
 		}
 
@@ -608,7 +608,7 @@ def crynime():
 		ncry = cryz['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': ncry
 		}
 	except:
@@ -616,7 +616,7 @@ def crynime():
 		ncry = cryz['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': cryz
 		}
 
@@ -627,7 +627,7 @@ def kissnime():
 		nkiss = rkiss['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': nkiss
 		}
 	except:
@@ -635,7 +635,7 @@ def kissnime():
 		nkiss = rkiss['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': nkiss
 		}
 
@@ -646,7 +646,7 @@ def hugnime():
 		nhug = hugz['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': nhug
 		}
 	except:
@@ -654,7 +654,7 @@ def hugnime():
 		nhug = hugz['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': nhug
 		}
 
@@ -666,7 +666,7 @@ def randomanime():
 		nimee = nnimee['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': nimee
 		}
 	except:
@@ -675,7 +675,7 @@ def randomanime():
 		nimee = nnimee['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': nimee
 		}
 
@@ -686,13 +686,13 @@ def randomloli():
 		loli = get('https://api.lolis.life/%s' % random.choice(hehe)).json()['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': loli
 		}
 	except:
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': loli
 		}
 
@@ -703,13 +703,13 @@ def rmemes():
 		loli = get('https://api.lolis.life/%s' % random.choice(hehe)).json()['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': loli
 		}
 	except:
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': loli
 		}
 
@@ -720,7 +720,7 @@ def blowjob():
 		bblow = nblow['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': bblow
 		}
 	except:
@@ -728,7 +728,7 @@ def blowjob():
 		bblow = nblow['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': bblow
 		}
 
@@ -739,7 +739,7 @@ def hentaii():
 		bblow = nblow['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': bblow
 		}
 	except:
@@ -747,7 +747,7 @@ def hentaii():
 		bblow = nblow['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': bblow
 		}
 
@@ -758,7 +758,7 @@ def nsfwneko():
 		nekko = nneko['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': nekko
 		}
 	except:
@@ -766,7 +766,7 @@ def nsfwneko():
 		nekko = nneko['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': nekko
 		}
 
@@ -777,7 +777,7 @@ def trapnime():
 		ntrap = trap['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': ntrap
 		}
 	except:
@@ -785,7 +785,7 @@ def trapnime():
 		ntrap = trap['url']
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'result': ntrap
 		}
 
@@ -804,7 +804,7 @@ def igeh():
 			else:
 				return {
 					'status': 200,
-					'creator':'I Am Mario',
+					'creator':'Adittt',
 					'result': result['descriptionc'],
 				}
 		except Exception as e:
@@ -830,7 +830,7 @@ def ttpz():
 			print(ttp)
 			return {
 				'status': 200,
-				'creator':'I Am Mario',
+				'creator':'Adittt',
 				'base64': ttp['base64'],
 				'creator': 'Tobz'
 			}
@@ -855,7 +855,7 @@ def zfb():
 			print(fb)
 			return {
 				'status': 200,
-				'creator':'I Am Mario',
+				'creator':'Adittt',
 				'result':{
 					'kualitasHD': fb['resultHD'],
 					'kualitasSD': fb['resultSD']
@@ -882,7 +882,7 @@ def artin():
 			print(art)
 			return {
 				'status': 200,
-				'creator':'I Am Mario',
+				'creator':'Adittt',
 				'result': art['result'],
 				'creator': 'Tobz'
 			}
@@ -905,7 +905,7 @@ def kbbz():
 			url = get('https://mnazria.herokuapp.com/api/kbbi?search={}'.format(query)).json()['result']
 			return {
 				'status': 200,
-				'creator':'I Am Mario',
+				'creator':'Adittt',
 				'result': url,
 				'creator': 'Tobz'
 			}
@@ -930,7 +930,7 @@ def jshalat():
 			print(hslt)
 			return {
 				'status': 200,
-				'creator':'I Am Mario',
+				'creator':'Adittt',
 				'result':{
 					'imsak': hslt['results']['datetime'][0]['times']['Imsak'],
 					'sunrise': hslt['results']['datetime'][0]['times']['Sunrise'],
@@ -964,7 +964,7 @@ def zjoox():
 			print(rsp)
 			return {
 				'status': 200,
-				'creator':'I Am Mario',
+				'creator':'Adittt',
 				'result':{
 					'album': rsp['result']['msong'],
 					'judul': rsp['result']['msinger'],
@@ -994,7 +994,7 @@ def zlirik():
 			print(lrk)
 			return {
 				'status': 200,
-				'creator':'I Am Mario',
+				'creator':'Adittt',
 				'result':{
 					'album': lrk['result']['msong'],
 					'judul': lrk['result']['msinger'],
@@ -1024,7 +1024,7 @@ def simi():
 			print(sim)
 			return {
 				'status': 200,
-				'creator':'I Am Mario',
+				'creator':'Adittt',
 				'result': sim['success'],
 				'creator': 'Tobz'
 			}
@@ -1071,7 +1071,7 @@ def zcuaca():
 			print(sim)
 			return {
 				'status': 200,
-				'creator':'I Am Mario',
+				'creator':'Adittt',
 				'kota': cuc[0]['Kota'],
 				'malam': cuc[0]['Malam'],
 				'siang': cuc[0]['Dini Hari'],
@@ -1099,7 +1099,7 @@ def short():
             print(data)
             return {
             	'status': 200,
-            	'creator':'I Am Mario',
+            	'creator':'Adittt',
 	            'result': data
             }
         except Exception as e:
@@ -1130,7 +1130,7 @@ def zneonime():
                 hasil = data.append({"title":title,"desc": desc,"image":image,"link":link})
             return {
 				'status': 200,
-				'creator':'I Am Mario',
+				'creator':'Adittt',
 				'result':data
 			}
         except Exception as e:
@@ -1155,7 +1155,7 @@ def stalk():
 			thumb = igestalk.find('img')['src']
 			return {
 				'status': 200,
-				'creator':'I Am Mario',
+				'creator':'Adittt',
 				'Name': igestalk_[0].text.strip(),
 				'Username': igestalk_[1].text.strip(),
 				'Jumlah_Post': igestalk_[2].text.replace('\n',' ').strip(),
@@ -1186,7 +1186,7 @@ def daerah():
 		no += 1
 	return {
 		'status': 200,
-		'creator':'I Am Mario',
+		'creator':'Adittt',
 		'result': hasil
 	}
 
@@ -1199,7 +1199,7 @@ def waifu():
 	if result['gender'] == 'female':
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'name': result['name'],
 			'desc': desc,
 			'image': result['image'],
@@ -1208,7 +1208,7 @@ def waifu():
 	else:
 		return {
 			'status': 200,
-			'creator':'I Am Mario',
+			'creator':'Adittt',
 			'name': '%s (husbu)' % result['name'],
 			'desc': desc,
 			'image': result['image'],
@@ -1222,7 +1222,7 @@ def infogempa():
 	img = be.find('a')['href']
 	return {
 		'status': 200,
-		'creator':'I Am Mario',
+		'creator':'Adittt',
 		'map': img,
 		'waktu': em[0].text,
 		'magnitude': em[1].text,
@@ -1239,7 +1239,7 @@ def quotes():
 	print(result)
 	return {
 		'status': 200,
-		'creator':'I Am Mario',
+		'creator':'Adittt',
 		'author': result['author'],
 		'quotes': result['quotes']
 	}
@@ -1250,7 +1250,7 @@ def quotesnimerandom():
 	print(quotesnime)
 	return {
 		'status': 200,
-		'creator':'I Am Mario',
+		'creator':'Adittt',
 		'data': {
 			'quote': quotesnime['quote'],
 			'character': quotesnime['character'],
