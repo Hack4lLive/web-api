@@ -312,7 +312,7 @@ def stal():
   if request.args.get('username'):
     try:
       tak = request.args.get('username').replace('@','')
-      url = f'api ferdiz taruh sini{tak}'
+      url = f'https://ferdiz-afk.herokuapp.com/stalk?us={tak}'
       r = get(url).json()
       print(r)
       js = {
